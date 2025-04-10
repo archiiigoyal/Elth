@@ -1,87 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthInfo - Your Trusted Medical Guide</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <script src="tesseract.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignIn&SignUp</title>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <script type="module" src="firebaseauth.js"></script>
+
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">HealthInfo</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Appointments</a></li>
-                <li><a href="#">Allergy & Vaccination Records</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Support</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Trusted Medical Information at Your Fingertips</h1>
-            <p>Accurate health insights, expert advice, and the latest medical news.</p>
-            <button class="cta-btn">Explore More</button>
-        </div>
-    </section>
 
-<!-- File Upload Section -->
-<section class="upload-section">
-    <h2>Upload Your Medical Documents</h2>
-    <div class="upload-container">
-        <div class="upload-image">
-            <img src="med rep.jpg" alt="Upload Documents">
-        </div>
-        <div class="upload-form">
-            <input type="file" id="fileUpload" accept=".pdf,.jpg,.png">
-            <button onclick="processFile()">Upload Reports</button>
-            <p id="ocrResult"></p>
-        </div>
+  <div class="container">
+    <div class="logo-container">
+      <img src="img/elth_logo.png" alt="Logo" class="logo" />
     </div>
-</section>
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="" class="sign-in-form">
+          <div id = "signInMessage" class = "messageDiv" style="display: none;"></div>
+          <h2 class="title">Sign In</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Email" id="email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id = 'password' />
+          </div>
+          <input type="submit" value="Login" id="loginBtn" class="btn solid" />
+
+          <p class="social-text">OR</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <img src="img/google_icon.webp" alt="Google Login" height="30" />
+            </a>
+            <p class="social-text">Sign in with Google</p>
+          </div>
+        </form>
 
 
+        <form action="" class="sign-up-form">
+          <div id = "signUpMessage" class = "messageDiv" style="display: none;"></div>
+          <h2 class="title">Sign Up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Name" id="name" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" id="s_email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="s_password" />
+          </div>
+          <input type="submit" value="Sign Up" class="btn solid" />
 
-    <!-- Featured Articles -->
-    <section class="articles">
-        <h2>Latest Health Articles</h2>
-        <div class="article-container">
-            <div class="article">
-                <img src="heart.jpg" alt="Heart Health">
+          <p class="social-text">OR</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <img src="img/google_icon.webp" alt="Google Login" height="30" />
+            </a>
+            <p class="social-text">Sign up with Google</p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="panels-container">
 
-                <h3>Understanding Heart Disease</h3>
-                <p>Learn about symptoms, prevention, and treatment options.</p>
-            </div>
-            <div class="article">
-                <img src="nutrition.jpeg" alt="Nutrition">
-                <h3>Best Diet for a Healthy Life</h3>
-                <p>Discover the essential nutrients for better well-being.</p>
-            </div>
-            <div class="article">
-                <img src="mentalhealth.webp" alt="Mental Health">
-                <h3>Mental Health Matters</h3>
-                <p>How to take care of your mind and emotions daily.</p>
-            </div>
-           
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here?</h3>
+          <p>Say goodbye to paper mess, and hello to digital ease!</p>
+          <button class="btn transparent" id="sign-up-btn">Sign Up</button>
         </div>
-    </section>
+        <img src="img/signup.png" class="image" alt="">
+      </div>
 
-    
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us?</h3>
+          <p>You’re just one step away — sign in to explore your vault.</p>
+          <button class="btn transparent" id="sign-in-btn">Sign In</button>
+        </div>
+        <img src="img/signin.png" class="image" alt="">
+      </div>
+    </div>
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 HealthInfo | All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="./app.js"></script>
 </body>
+
 </html>
